@@ -3,18 +3,21 @@ import datetime
 import os
 
 import csv
-import sys
+
 from scripts import file, mbank, ing
 
-if __name__ == '__main__':
+def App(bank_name = "mbank"):
     temp_file = file.list_csv_files("input")
 
-    #print(temp_file[0])
-    if(sys.argv[1] == "mBank"):
+    if (bank_name == "mbank"):
         mbank.interpretation(temp_file[0])
-    elif(sys.argv[1] == "ing"):
+    elif (bank_name == "ing"):
         ing.interpretation(temp_file[0])
-    #os.remove("input/" + temp_file[0])
+
+    os.remove("input/" + temp_file[0])
+
+
+
 
 
 
